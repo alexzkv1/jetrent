@@ -5,7 +5,7 @@ import Contact from './pages/Contact'
 import Form from './pages/Form';
 import Price from './pages/Price';
 import Header from './components/Header';
-import backgroundVideo from '/video.mp4';
+import backgroundVideo from './images/video.mp4';
 import Footer from './components/Footer';
 import { Routes, Route } from 'react-router-dom';
 
