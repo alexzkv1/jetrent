@@ -12,9 +12,9 @@ export default function Main() {
             Meie Jetid
             </h1>
             <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl gap-5 px-4 mx-auto">
-            <Card title='Sea-Doo Gti-130'  buttonText='Broneeri' imageUrl='./GTI.jpg'/>
-            <Card title='Yamaha GP1800R SVHO' buttonText='Broneeri' imageUrl='./Yamaha.jpg'/>
-            <Card title='Sea-Doo Spark Trixx' buttonText='Broneeri' imageUrl='./Spark.jpg'/>
+            <Card title='Sea-Doo Gti-130'  buttonText='Broneeri' imageUrl='./jetrent/GTI.jpg'/>
+            <Card title='Yamaha GP1800R SVHO' buttonText='Broneeri' imageUrl='./jetrent/Yamaha.jpg'/>
+            <Card title='Sea-Doo Spark Trixx' buttonText='Broneeri' imageUrl='./jetrent/Spark.jpg'/>
             </div>
           </div>
         </div>
