@@ -1,5 +1,6 @@
 {
-  "name": "jet",
+  "name": "jetrent",
+  "homepage": "https://alexzkv1.github.io/jetrent/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,10 +8,14 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
+    "@types/pikaday": "^1.7.9",
+    "gh-pages": "^6.3.0",
     "lucide-react": "^0.523.0",
     "pikaday": "^1.8.2",
     "react": "^19.1.0",
