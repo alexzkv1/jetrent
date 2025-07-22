@@ -27,7 +27,7 @@ function App() {
 
   <main className="w-full mt-20 px-4">
     <Routes>
-      <Route path="/" element={<Main />} />
+      <Route path="/jetrent" element={<Main />} />
       <Route path="/gallery" element={<Gallery />} />
       <Route path="/kontakt" element={<Contact />} />
       <Route path="/broneeri" element={<Form />} />
