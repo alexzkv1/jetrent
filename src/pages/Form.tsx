@@ -1,6 +1,23 @@
 import CalendarInput from '../components/CalendarInput';
+import { useState } from 'react';
 
-export default function Form() {   
+export default function Form() {
+  const [startDate, setStartDate] = useState<Date | null>(null);
+  const [endDate, setEndDate] = useState<Date | null>(null);
+
+  const handleStartDateChange = (date: Date | null) => {
+    setStartDate(date);
+    if (date && endDate && date > endDate) {
+      setEndDate(null);
+    }
+  };
+
+  const handleEndDateChange = (date: Date | null) => {
+    if (!startDate || (date && date >= startDate)) {
+      setEndDate(date);
+    }
+  };
+
     return(
         <div>
             <form className="bg-gray-100 rounded-2xl shadow-lg p-8 border-3 border-black flex flex-col gap-5 max-w-300 mx-auto mt-10 text-black">
@@ -59,11 +76,20 @@ export default function Form() {
                     </label>
                     <label className="flex flex-col gap-1">
                         <span className="font-semibold">Algus</span>
-                        <CalendarInput />
+                        <CalendarInput
+                        selectedDate={startDate}
+                        onChange={handleStartDateChange}
+                        minDate={new Date()}
+                        />
                     </label>
                     <label className="flex flex-col gap-1">
                         <span className="font-semibold">Lõpp</span>
-                        <CalendarInput />
+                        <CalendarInput
+                        selectedDate={endDate}
+                        onChange={handleEndDateChange}
+                        minDate={startDate || new Date()}
+                        disabled={!startDate}
+                        />
                     </label>
                     <label className="flex flex-col gap-1">
                         <span className="font-semibold">Alustame</span>
