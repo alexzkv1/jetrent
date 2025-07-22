@@ -1,6 +1,12 @@
 import { Link } from 'react-router-dom';
 
-export default function PriceCard({time, price, features}) {
+type CardProps = {
+    time: string;
+    price: string;
+    features: string[];
+};
+
+export default function PriceCard({time, price, features}: CardProps) {
   return (
     <div className="flex w-full">
       <div className="w-full bg-white rounded-2xl shadow-xl border border-gray-300 overflow-hidden mx-2 ">
@@ -14,7 +20,7 @@ export default function PriceCard({time, price, features}) {
         </div>
         <div className="mb-4 sm:mb-6 px-3 sm:px-4">
           <ul className="bg-gray-100 space-y-2 sm:space-y-3 text-sm sm:text-base text-gray-700 rounded-xl p-3 sm:p-4">
-            {features.map((feature, index) => (
+            {features.map((feature: string, index: number) => (
               <li key={index} className="flex items-start border-b border-gray-300 pb-2 last:border-0 last:pb-0">
                 <svg className="w-4 h-4 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M16.707 5.293a1 1 0 00-1.414-1.414l-7.586 7.586-3.293-3.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8z" />

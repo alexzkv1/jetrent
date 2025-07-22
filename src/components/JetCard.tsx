@@ -1,6 +1,12 @@
 import { Link } from 'react-router-dom'
 
-export default function JetCard({ image, title, description }) {
+type CardProps = {
+    image: string;
+    title: string;
+    description: string;
+};
+
+export default function JetCard({ image, title, description }: CardProps) {
   return (
     <div className="flex flex-col lg:flex-row justify-between items-center border-2 rounded-2xl lg:rounded-3xl bg-gray-900 p-4 sm:p-6 md:p-8 shadow-md hover:shadow-lg transition-shadow duration-300">
       <div className="w-full lg:w-1/2 space-y-3 sm:space-y-4 md:space-y-6 text-white order-2 lg:order-1 mt-4 lg:mt-0">
