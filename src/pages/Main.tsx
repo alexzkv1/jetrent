@@ -15,9 +15,9 @@ export default function Main() {
             Meie Jetid
             </motion.h1>
             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl gap-5 px-4 mx-auto">
-                <Card title='Sea-Doo Gti-130'  buttonText='Broneeri' imageUrl='./GTI.jpg' id='gti' />
-                <Card title='Yamaha GP1800R SVHO' buttonText='Broneeri' imageUrl='./Yamaha.jpg' id='yamaha' />
-                <Card title='Sea-Doo Spark Trixx' buttonText='Broneeri' imageUrl='./Spark.jpg' id='spark' />
+                <Card title='Sea-Doo Gti-130'  buttonText='Broneeri' imageUrl='../jetrent/GTI.jpg' id='gti' />
+                <Card title='Yamaha GP1800R SVHO' buttonText='Broneeri' imageUrl='./jetrent/Yamaha.jpg' id='yamaha' />
+                <Card title='Sea-Doo Spark Trixx' buttonText='Broneeri' imageUrl='./jetrent/Spark.jpg' id='spark' />
             </motion.div>
           </motion.div>
         </div>
