@@ -7,12 +7,12 @@ import Price from './pages/Price';
 import Header from './components/Header';
 import backgroundVideo from '/video.mp4';
 import Footer from './components/Footer';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, type RoutesProps } from 'react-router-dom';
 import {useLayoutEffect} from 'react';
 
 function App() {
 
-  const Wrapper = ({children}) => {
+  const Wrapper = ({children} : RoutesProps) => {
   const location = useLocation();
   useLayoutEffect(() => {
      window.scrollTo({ top: 0, behavior: "smooth" });

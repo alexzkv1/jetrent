@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 
 export default function Header() {
     const [scrolled, setScrolled] = useState(false);
-    const transition = {
+    const transition : object = {
         duration: 1.5,
         delay: 0.2,
         ease: [0, 0.71, 0.2, 1.01],

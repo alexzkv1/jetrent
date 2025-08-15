@@ -59,7 +59,7 @@ export default function Form() {
     setStartTime('')
   }
 
-  const inputCheck = (e: React.FormEvent<HTMLFormElement>) => {
+  const inputCheck = () => {
     const checkboxes = document.getElementsByClassName('w-5 h-5 accent-blue-600 text-black');
     const checkCount = Array.from(checkboxes).filter(
       (checkbox) => (checkbox as HTMLInputElement).checked
@@ -91,7 +91,7 @@ const sendEmail = async () => {
     };
 
     try {
-        const res = await axios.post("https://api.emailjs.com/api/v1.0/email/send", data);
+        await axios.post("https://api.emailjs.com/api/v1.0/email/send", data);
         setShowSuccess(true);
         clearStates();
     } catch (err) {
@@ -101,9 +101,9 @@ const sendEmail = async () => {
 
 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    if(inputCheck(e) === true){
+    if(inputCheck() === true){
         sendEmail()
         clearStates()
     }
@@ -277,7 +277,6 @@ const sendEmail = async () => {
                         <span className="font-semibold">Küüpäev</span>
                         <CalendarInput
                         selectedDate={startDate}
-                        setStartDate={setStartDate}
                         onChange={handleStartDateChange}
                         minDate={new Date()}
                         />

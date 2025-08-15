@@ -1,7 +1,7 @@
 import { motion } from "motion/react"
 
 export default function Feedback() {
-    const transition = {
+    const transition : object = {
         duration: 1,
         delay: 1,
         ease: [0, 0.71, 0.2, 1.01],
