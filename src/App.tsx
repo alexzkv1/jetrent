@@ -7,9 +7,19 @@ import Price from './pages/Price';
 import Header from './components/Header';
 import backgroundVideo from '/video.mp4';
 import Footer from './components/Footer';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import {useLayoutEffect} from 'react';
 
 function App() {
+
+  const Wrapper = ({children}) => {
+  const location = useLocation();
+  useLayoutEffect(() => {
+     window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location.pathname]);
+  return children
+} 
+
   return (
 <>
   <video
@@ -25,15 +35,17 @@ function App() {
     <Header />
   </header>
 
-  <main className="w-full mt-20 px-4">
-    <Routes>
-      <Route path="/jetrent" element={<Main />} />
+  <main className="w-full mt-20">
+    <Wrapper>
+      <Routes>
+      <Route path="/" element={<Main />} />
       <Route path="/gallery" element={<Gallery />} />
       <Route path="/kontakt" element={<Contact />} />
       <Route path="/broneeri" element={<Form />} />
       <Route path="/hinnakiri" element={<Price />} />
-      <Route path="/jetid" element={<Jets />} />
+      <Route path="/jetid/:id" element={<Jets />} />
     </Routes>
+    </Wrapper>
   </main>
 
   <footer className="w-full mt-20">
