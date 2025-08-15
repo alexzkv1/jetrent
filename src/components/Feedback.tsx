@@ -7,7 +7,7 @@ export default function Feedback() {
         ease: [0, 0.71, 0.2, 1.01],
     }
     return(
-        <motion.div initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, ease: "easeOut" }} transition={transition}  viewport={{ once: true }} className="bg-gray-900 w-full flex flex-col justify-center text-center p-10 rounded-2xl shadow-lg border-2">
+        <motion.div initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} transition={transition}  viewport={{ once: true }} className="bg-gray-900 w-full flex flex-col justify-center text-center p-10 rounded-2xl shadow-lg border-2">
             <h1 className="text-3xl font-bold mb-4 text-white">What our clients say</h1>
             <hr className="w-full mx-auto border-t-2 border-blue-600 mb-8" />
             <div className="flex flex-col md:flex-row gap-6 justify-center">
