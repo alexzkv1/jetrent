@@ -1,17 +1,18 @@
 import { useState } from "react";
 import { Waves, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { motion } from "motion/react";
 
 export default function Menu() {
     const [open, setOpen] = useState(false);
 
     return (
         <>
-            <button
+            <motion.button whileHover={{ scale: 1.3 }}
                 onClick={() => setOpen(true)}
             >
                 <Waves className="text-white justify-start" size={28} />
-            </button>
+            </motion.button>
 
             {open && (
                 <div
@@ -19,11 +20,11 @@ export default function Menu() {
                     onClick={() => setOpen(false)}
                 />
             )}
-
             <div
-                className={`fixed top-0 left-0 min-h-screen w-full max-w-150 bg-blue-800 border-r-4 shadow-lg z-50 transform transition-transform duration-500 ${
-                    open ? "translate-x-0" : "-translate-x-full"
+                className={`fixed top-0 left-0 min-h-screen w-full max-w-150 bg-blue-800 border-r-4 shadow-lg z-50 transform transition-all duration-500  ${
+                    open ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
                 } flex flex-col justify-center`}
+                style={{ pointerEvents: open ? "auto" : "none" }}
             >
                 <div className="absolute top-4 right-4 md:hidden">
                     <button onClick={() => setOpen(false)}>
@@ -32,16 +33,18 @@ export default function Menu() {
                 </div>
 
                 <ul className="flex flex-col items-center text-5xl mt-5">
-                    <li className="p-8 border-b-3"><Link onClick={() => setOpen(false)} to="/gallery">Gallerii</Link></li>
-                    <li className="p-8 border-b-3"><Link onClick={() => setOpen(false)} to="/hinnakiri">Hinnakiri</Link></li>
-                    <li className="p-8 border-b-3"><Link onClick={() => setOpen(false)} to="/jetid">Jetid</Link></li>
-                    <li className="p-8 border-b-3"><Link onClick={() => setOpen(false)} to="/kontakt">Kontakt</Link></li>
+                    <motion.li whileHover={{ scale: 1.2 }} className="p-8"><Link onClick={() => setOpen(false)} className="duration-500 hover:text-gray-400" to="/gallery">Gallerii</Link></motion.li>
+                    <hr className="border-2 w-full max-w-80 rounded-2xl" />
+                    <motion.li whileHover={{ scale: 1.2 }} className="p-8"><Link onClick={() => setOpen(false)} className="duration-500 hover:text-gray-400" to="/hinnakiri">Hinnakiri</Link></motion.li>
+                    <hr className="border-2 w-full max-w-80 rounded-2xl" />
+                    <motion.li whileHover={{ scale: 1.2 }} className="p-8"><Link onClick={() => setOpen(false)} className="duration-500 hover:text-gray-400" to="/kontakt">Kontakt</Link></motion.li>
+                    <hr className="border-2 w-full max-w-80 rounded-2xl" />
                 </ul>
 
                 <div className="absolute bottom-3 left-0 w-full flex justify-center space-x-6 text-gray-200 text-md">
-                    <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
-                    <a href="https://tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="Tiktok">Tiktok</a>
-                    <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+                    <motion.a whileHover={{ scale: 1.1   }} href="https://instagram.com/" target="_blank" rel="noopener noreferrer" className="duration-500 hover:text-gray-400" aria-label="Instagram">Instagram</motion.a>
+                    <motion.a whileHover={{ scale: 1.1 }} href="https://tiktok.com/" target="_blank" rel="noopener noreferrer" className="duration-500 hover:text-gray-400" aria-label="Tiktok">Tiktok</motion.a>
+                    <motion.a whileHover={{ scale: 1.1 }} href="https://facebook.com/" target="_blank" rel="noopener noreferrer" className="duration-500 hover:text-gray-400" aria-label="Facebook">Facebook</motion.a>
                 </div>
             </div>
         </>
