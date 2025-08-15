@@ -94,7 +94,7 @@ const sendEmail = async () => {
         await axios.post("https://api.emailjs.com/api/v1.0/email/send", data);
         setShowSuccess(true);
         clearStates();
-    } catch (err) {
+    } catch (err : any) {
         console.error(err.response?.data || err.message);
     }
 };
