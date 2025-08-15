@@ -23,7 +23,7 @@ export default function Header() {
         scrolled ? "bg-blue-800 border-2 border-gray-200" : "bg-transparent shadow-2xl"}`}>
             <div className="flex items-center justify-between px-2 sm:px-4 md:px-5 lg:px-5">
                 <Menu />
-               <Link to='/jetrent'><motion.img whileHover={{ scale: 1.2 }} transition={{ duration: 0.2, ease: "easeOut" }} src='./jetrent/logo.svg' alt='Logo' className='w-16 h-16 lg:w-18 lg:h-18' /></Link>
+               <Link to='/jetrent'><motion.img whileHover={{ scale: 1.2 }} transition={{ duration: 0.2, ease: "easeOut" }} src='./logo.svg' alt='Logo' className='w-16 h-16 lg:w-18 lg:h-18' /></Link>
                 <Link to="/broneeri">
                 <motion.button whileHover={{ scale: 1.15 }} transition={{ duration: 0.2, ease: "easeOut" }} className="btn relative overflow-hidden rounded-lg border-2 bg-blue-900 border-gray-400 lg:text-2xl
                 font-bold text-white  transition-colors duration-300 group text-xl py-6 px-1 sm:px-3 md:px-4 lg:py-8 lg:px-5">
