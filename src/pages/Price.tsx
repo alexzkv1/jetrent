@@ -37,14 +37,14 @@ export default function Price() {
               </motion.h2>
               <div className="lg:flex sm:grid sm:grid-cols-1 pl-1 justify-end">
                 <img
-                src="/gti-130.png"
+                src="./jetrent/gti-130.png"
                 alt="Jetski"
                 width={150}
                 height={150}
                 className="object-cover"
                 />
                 <img
-                src="/spark-icon.png"
+                src="./jetrent/spark-icon.png"
                 alt="Jetski"
                 width={150}
                 height={150}
@@ -93,7 +93,7 @@ export default function Price() {
               </motion.h2>
               <div className="lg:flex sm:grid sm:grid-cols-1 pl-1 justify-end ">
                 <img
-                src="/yamaha-icon.jpg"
+                src="./jetrent/yamaha-icon.jpg"
                 alt="Jetski"
                 width={150}
                 height={150}

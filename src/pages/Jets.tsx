@@ -5,7 +5,7 @@ import JetCard from "../components/JetCard";
 const jets = [
   {
     id: "gti",
-    image: "/GTI.jpg",
+    image: "./jetrent/GTI.jpg",
     title: "Sea-Doo Gti-130",
     description: `Sea-Doo GTI 2023 on jettide turul populaarne valik, mis on tuntud oma lihtsa kasutamise, mugavuse ja praktilisuse poolest.
   Kui sa eelistad pigem rahulikku ja pingevaba sõidustiil, sinu jaoks pole juhitavuse teravus nii oluline kui mugavus ja stabiilsus, siis GTI 130 on just sulle. 
@@ -16,7 +16,7 @@ const jets = [
   },
   {
     id: "yamaha",
-    image: "/Yamaha.jpg",
+    image: "./jetrent/Yamaha.jpg",
     title: "Yamaha GP1800R SVHO",
     description: `Kui ihkad peadpööritavat kiirust, on GP1800R sinu valik. See on esmaklassiline sportlik jett tõelistele entusiastidele:
 • Mõeldud kahele inimesele, kuid nagu solorakett, avaneb see uutmoodi, arendades muljetavaldavat kiirust veelgi kiiremini
@@ -27,7 +27,7 @@ P.S. Pakume ainult kogemustega sõitjatele, soovitav on väikekaeva või jeti ju
   },
   {
     id: "spark",
-    image: "/Spark.jpg",
+    image: "./jetrent/Spark.jpg",
     title: "Sea-Doo Spark Trixx",
     description: `ui ihkad peadpööritavat kiirust, on GP1800R sinu valik. See on esmaklassiline sportlik jett tõelistele entusiastidele:
 • Mõeldud kahele inimesele, kuid nagu solorakett, avaneb see uutmoodi, arendades muljetavaldavat kiirust veelgi kiiremini

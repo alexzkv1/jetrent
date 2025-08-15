@@ -1,35 +1,53 @@
 import { Link } from 'react-router-dom'
+import { motion } from 'motion/react'
 
 type CardProps = {
-    image: string;
-    title: string;
-    description: string;
+  image: string;
+  title: string;
+  description: string;
 };
 
 export default function JetCard({ image, title, description }: CardProps) {
   return (
-    <div className="flex flex-col lg:flex-row justify-between items-center border-2 rounded-2xl lg:rounded-3xl bg-gray-900 p-4 sm:p-6 md:p-8 shadow-md hover:shadow-lg transition-shadow duration-300">
-      <div className="w-full lg:w-1/2 space-y-3 sm:space-y-4 md:space-y-6 text-white order-2 lg:order-1 mt-4 lg:mt-0">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">{title}</h2>
-        <hr className="border-b border-gray-600 mt-1 sm:mt-2" />
-        <p className="text-sm sm:text-base md:text-lg">{description}</p>
-        <ul className="list-disc list-inside text-sm sm:text-base md:text-lg italic space-y-1 sm:space-y-2">
-          <li>Feature 1</li>
-          <li>Feature 2</li>
-          <li>Feature 3</li>
-        </ul>
-        <Link to='/broneeri' className="btn mt-3 sm:mt-4 border border-gray-400 w-full rounded-lg px-3 py-2 sm:px-4 sm:py-2 bg-blue-700 hover:bg-blue-900 transition-colors duration-200 text-sm sm:text-base">
-          Brooneri
-        </Link>
-      </div>
-      
-      <figure className="w-full lg:w-1/2 mt-0 lg:ml-6 xl:ml-8 order-1 lg:order-2">
-        <img
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="bg-gray-900 flex flex-col lg:flex-row justify-between border-2 rounded-md shadow-md overflow-hidden lg:max-h-180"
+    >
+      <figure className="w-full lg:w-1/2 h-64 sm:h-80 lg:h-auto flex items-center justify-center border-b lg:border-b-0 lg:border-r overflow-hidden">
+        <motion.img
           src={image}
           alt={title}
-          className="w-full h-auto object-cover rounded-xl aspect-[4/3] border border-gray-600 shadow-md"
+          className="w-full h-full object-cover shadow-md"
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
         />
       </figure>
-    </div>
+
+      <div className="flex flex-col justify-center w-full lg:w-1/2 text-white text-left items-center px-6 sm:px-8 py-8">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight text-blue-400 drop-shadow-lg">
+          {title}
+        </h2>
+        <hr className="border-b-2 border-blue-700 w-full mb-4" />
+        <p className="text-base sm:text-lg mb-4 sm:px-6 lg:px-10 font-medium text-gray-200 text-center lg:text-left">
+          {description}
+        </p>
+        <ul className="list-disc list-inside italic mb-6 space-y-2 text-base sm:text-lg text-blue-200">
+          <li className="hover:text-blue-400 transition-colors">Feature 1</li>
+          <li className="hover:text-blue-400 transition-colors">Feature 2</li>
+          <li className="hover:text-blue-400 transition-colors">Feature 3</li>
+        </ul>
+        <div className="flex justify-center">
+          <Link
+            to="/broneeri"
+            className="btn border rounded-lg px-6 py-3 bg-blue-700 hover:bg-blue-900 transition-colors duration-200 text-sm sm:text-base min-w-[150px] mt-2"
+          >
+            Brooneri
+          </Link>
+        </div>
+      </div>
+    </motion.div>
   );
 }

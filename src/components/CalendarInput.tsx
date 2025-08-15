@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import Pikaday from "pikaday";
+import "pikaday/css/pikaday.css";
 
 interface CalendarInputProps {
   selectedDate?: Date | null;
@@ -32,8 +33,21 @@ export default function CalendarInput({
 
     pickerRef.current = picker;
 
-    return () => picker.destroy();
-  }, [minDate, selectedDate, onChange]);
+    return () => {
+      picker.destroy();
+    };
+  }, [minDate, onChange]);
+
+  // синхронизация value при изменении selectedDate
+  useEffect(() => {
+    if (inputRef.current) {
+      if (selectedDate) {
+        inputRef.current.value = pickerRef.current?.toString() || selectedDate.toLocaleDateString("et-EE");
+      } else {
+        inputRef.current.value = "";
+      }
+    }
+  }, [selectedDate]);
 
   useEffect(() => {
     if (disabled && pickerRef.current) {
@@ -47,8 +61,9 @@ export default function CalendarInput({
   return (
     <input
       type="text"
-      className="input pika-single bg-gray-100 border-1 border-gray-300"
-      placeholder="Pick a date"
+      className="input bg-gray-100 border-1 border-gray-300"
+      placeholder="Vali kuupäev"
+      required
       ref={inputRef}
       disabled={disabled}
     />
