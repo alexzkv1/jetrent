@@ -1,9 +1,15 @@
+import { motion } from "motion/react"
+
 export default function Hero() {
     return (
-    <div className="max-w-7xl hero p-6 flex flex-col md:flex-row rounded-2xl mx-auto shadow-2xl bg-blue-800 border-3 border-gray-200">
+    <motion.div initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }} 
+    whileHover={{ scale: 1.1}}
+    transition={{ duration: 0.2, ease: "easeOut" }}
+    className="max-w-7xl hero p-6 flex flex-col md:flex-row rounded-2xl mx-auto shadow-2xl bg-blue-800 border-3 border-gray-200">
         
         <img
-            src="./jetrent/wave.jpg"
+            src="./wave.jpg"
             alt="Jetski"
             className=" w-250 h-100 object-cover rounded-lg shadow-lg mb-6 md:mb-0 border-2"
         />
@@ -16,6 +22,6 @@ export default function Hero() {
             </p>
             <hr className="w-full border-t-2 border-gray-300 my-2" />
         </div>
-    </div>
+    </motion.div>
     );
 };
